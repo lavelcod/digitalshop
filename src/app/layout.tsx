@@ -34,7 +34,9 @@ export default function RootLayout({
         <main className="flex flex-col min-h-screen">
           <div className="px-20 mt-20 ">{children}</div>
         </main>
-        <footer></footer>
+        <footer className="h-20 flex items-center justify-center border-t w-full mt-20">
+          <p>&copy; 2025 JS with Lavelcod. All rights reserved!</p>
+        </footer>
       </body>
     </html>
   );
