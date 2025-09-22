@@ -1,6 +1,6 @@
 import React from 'react';
-import { DATA } from '../mock/products';
 import ProductItem from './ProductItem';
+import { DATA } from '@/modules/mock/products';
 
 function ProductList() {
   return (
