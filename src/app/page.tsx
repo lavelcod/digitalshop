@@ -1,12 +1,12 @@
-import { Button } from '@/components/ui/button';
+import Banner from '@/components/banner';
+import Welcome from '@/components/Welcome';
 import Image from 'next/image';
 
 export default function Home() {
-  console.log('test');
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      my first page
-      <Button>Test Button</Button>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <Banner />
+      <Welcome />
     </div>
   );
 }
