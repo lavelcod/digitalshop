@@ -2,7 +2,14 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
-
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -24,20 +31,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <header className="flex justify-between h-20 items-center shadow-xl px-20 w-full">
-          <Header />
-        </header>
-        <main className="flex flex-col min-h-screen">
-          <div className="px-20 mt-20 ">{children}</div>
-        </main>
-        <footer className="h-20 flex items-center justify-center border-t w-full mt-20">
-          <p>&copy; 2025 JS with Lavelcod. All rights reserved!</p>
-        </footer>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <header className="flex justify-between h-20 items-center shadow-xl px-20 w-full">
+            <Header />
+          </header>
+          <main className="flex flex-col min-h-screen">
+            <div className="px-20 mt-20 ">{children}</div>
+          </main>
+          <footer className="h-20 flex items-center justify-center border-t w-full mt-20">
+            <p>&copy; 2025 JS with Lavelcod. All rights reserved!</p>
+          </footer>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
